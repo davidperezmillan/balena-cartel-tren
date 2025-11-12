@@ -1,6 +1,8 @@
 # AI Custom Project - Ollama & Open-WebUI
 
-[![Deploy with Balena](https://www.balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/davidperezmillan/balena-cartel-tren&defaultDeviceType=raspberrypi4-64&defaultFleet=g_david_perez_millan/balena-secondary-server)
+<a href="https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/davidperezmillan/balena-cartel-tren&defaultDeviceType=raspberrypi4-64&defaultFleet=g_david_perez_millan/balena-secondary-server" target="_blank">
+<img src="https://www.balena.io/deploy.svg" alt="Deploy with Balena">
+</a>
 
 Un proyecto completo de inteligencia artificial que combina **Ollama** (servidor de modelos de IA local) con **Open-WebUI** (interfaz web moderna) para crear tu propia plataforma de IA autoalojada.
 
