@@ -28,6 +28,23 @@ Un proyecto completo de inteligencia artificial que combina **Ollama** (servidor
 
 ## 🔧 Configuración
 
+### Archivo de configuración (.env)
+
+1. **Copia el archivo de ejemplo**:
+```bash
+cp .env.example .env
+```
+
+2. **Edita el archivo `.env`** con tu editor favorito:
+```bash
+nano .env
+```
+
+3. **Configura el modelo** que quieres usar:
+```env
+MODEL=qwen2.5:1.5b  # Modelo recomendado para Raspberry Pi 4
+```
+
 ### Variables de Entorno
 
 | Variable | Valor por defecto | Descripción |
@@ -122,7 +139,19 @@ curl http://localhost:11434/api/version
 
 ### Cambiar el modelo de IA
 
-#### Opción 1: Usando Docker Compose (Recomendado)
+#### Opción 1: Archivo .env (Más fácil)
+Edita el archivo `.env` y cambia la variable `MODEL`:
+
+```env
+MODEL=qwen2.5:1.5b  # Cambia aquí el modelo
+```
+
+Luego reinicia los contenedores:
+```bash
+docker-compose down && docker-compose up -d
+```
+
+#### Opción 2: Usando Docker Compose
 Edita el archivo `docker-compose.yaml` o `docker-compose-local.yaml` y modifica la variable `MODEL`:
 
 ```yaml
@@ -132,18 +161,12 @@ services:
       - MODEL=tu-modelo-preferido  # Cambia aquí el modelo
 ```
 
-Luego reconstruye y ejecuta:
-```bash
-docker-compose down
-docker-compose up --build -d
-```
-
-#### Opción 2: Editar el Dockerfile
+#### Opción 3: Editar el Dockerfile
 ```dockerfile
 ENV MODEL=tu-modelo-preferido
 ```
 
-#### Opción 3: Usar variable de entorno en tiempo de ejecución
+#### Opción 4: Usar variable de entorno en tiempo de ejecución
 ```bash
 docker run -e MODEL=llama2:7b ai-custom
 ```

@@ -9,7 +9,7 @@ services:
     ports:
       - "11434:11434"
     environment:
-      - MODEL=goekdenizguelmez/JOSIEFIED-Qwen3:0.6b
+      - MODEL=${MODEL}
     volumes:
       - ollama_data:/root/.ollama
     networks:
