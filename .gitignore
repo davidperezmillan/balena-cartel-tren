@@ -1,0 +1,30 @@
+# Ignore data directories
+ollama_data/
+webui_data/
+
+# Ignore SSH keys and sensitive files
+*.pem
+*.key
+id_*
+
+# Ignore Docker volumes and data
+**/data/
+**/*.db
+**/*.sqlite3
+
+# Ignore cache directories
+cache/
+**/cache/
+
+# Ignore log files
+*.log
+logs/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
