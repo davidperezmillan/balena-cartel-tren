@@ -8,6 +8,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "11434:11434"
+    environment:
+      - MODEL=goekdenizguelmez/JOSIEFIED-Qwen3:0.6b
     volumes:
       - ollama_data:/root/.ollama
     networks:

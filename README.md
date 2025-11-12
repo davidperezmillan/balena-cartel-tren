@@ -122,12 +122,28 @@ curl http://localhost:11434/api/version
 
 ### Cambiar el modelo de IA
 
-1. **Editar el Dockerfile**:
+#### Opción 1: Usando Docker Compose (Recomendado)
+Edita el archivo `docker-compose.yaml` o `docker-compose-local.yaml` y modifica la variable `MODEL`:
+
+```yaml
+services:
+  ollama:
+    environment:
+      - MODEL=tu-modelo-preferido  # Cambia aquí el modelo
+```
+
+Luego reconstruye y ejecuta:
+```bash
+docker-compose down
+docker-compose up --build -d
+```
+
+#### Opción 2: Editar el Dockerfile
 ```dockerfile
 ENV MODEL=tu-modelo-preferido
 ```
 
-2. **O usar variable de entorno**:
+#### Opción 3: Usar variable de entorno en tiempo de ejecución
 ```bash
 docker run -e MODEL=llama2:7b ai-custom
 ```
